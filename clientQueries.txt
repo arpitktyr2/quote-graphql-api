@@ -65,6 +65,8 @@ mutation createUser($userNew:UserInput!){
   }
 }
 ------------
+
+
 mutation createUser($userNew:UserInput!){
   user:signupUser(userNew:$userNew){ 
     _id
@@ -84,6 +86,7 @@ mutation createUser($userNew:UserInput!){
 }
 
 --------
+
 mutation SigninUser($userSignin:UserSigninInput!){
   user:signinUser(userSignin:$userSignin){ 
     token
@@ -96,4 +99,12 @@ mutation SigninUser($userSignin:UserSigninInput!){
     "password": "12345"
   }
 }
+
 ------
+
+
+mutation createQuote{
+  quote:createQuote(name:"i am another nice quote")
+}
+
+--------
