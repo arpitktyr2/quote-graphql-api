@@ -1,12 +1,14 @@
+import dotenv from "dotenv";
 import { ApolloServer } from "apollo-server";
+dotenv.config();
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import typeDefs from "./schemaGql.js";
 import jwt from "jsonwebtoken";
 
 import mongoose from "mongoose";
-import { JWT_SECRET, MONGO_URI } from "./config.js";
+const JWT_SECRET = process.env.JWT_SECRET;
 
-mongoose.connect(MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

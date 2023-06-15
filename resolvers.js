@@ -5,8 +5,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-import { JWT_SECRET } from "./config.js";
-
+const JWT_SECRET = process.env.JWT_SECRET;
 const User = mongoose.model("User");
 const Quote = mongoose.model("Quote");
 
